@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        .div1 ul {
+            background-color: wheat;
+            width: 100px;
+            list-style-type: none;
+            margin: 0; /* 0px 0em 0% */
+            padding: 0;
+        }
+        .div1 li a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bolder;
+            color: black;
+        }
+
+        .div1 li a:hover{
+            background-color: burlywood;
+            color: white;
+        }
+
+
+        .div2 ul{
+            margin: 0; /* 0px 0em 0% */
+            padding: 0;
+            list-style-type: none;
+            overflow: hidden;
+            background-color: wheat;
+        }
+        .div2 li {
+            float: left;
+        }
+        .div2 li a{
+            display: block;
+            width: 70px;
+            padding: 10px;
+            
+            text-align: center;
+            text-decoration: none;
+            background-color: wheat;
+            font-weight: bolder;
+            color: black;
+        }
+        .div2 li a:hover:not(.home){
+            background-color: burlywood;
+            color: white;
+        }
+
+        li a.home{
+            background-color: coral;
+            color: white;
+        }
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <!-- li 를 이용해서 네비게이션 바 -->
+    
+
+    <h1> li 와 a 태그를  사용하여 만드는 리스트 메뉴</h1>
+
+    <div class="div1">
+        <ul>
+            <li><a href="#" class="home">HOME</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">사이트맵</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="div2">
+        <ul>
+            <li><a href="#" class="home">HOME</a></li>
+            <li><a href="#">뉴스</a></li>
+            <li><a href="#">웹툰</a></li>
+            <li><a href="#">부동산</a></li>
+            <li><a href="#">쇼핑</a></li>
+            <li><a href="#">날씨</a></li>
+            <ul style="float: right; list-style-type: none;">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>

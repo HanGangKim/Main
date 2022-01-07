@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+
+        #container{
+            width: 400px;
+            margin: auto;
+        }
+
+        table , tr , td{
+            border: 1px black solid;
+            border-collapse: collapse ;
+        }
+
+        #sub{
+            width:  407px;
+            height: 40px;
+            text-align: right;
+            font-size: 20px;
+            border : 1px black solid ;
+
+        }
+
+        #win{
+            width:  407px;
+            height: 80px;
+            text-align: right;
+            font-size: 40px;
+            border : 1px black solid ;
+        }
+
+        td{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+
+        input[type="button"]{
+            border: 0px;
+            padding: 0px;
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        input[type="button"]:hover{
+            background-color: rgb(194, 194, 194);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <h3>계산기</h3>
+        <input type="text" id="sub" value="" readonly>
+        <input type="text" id="win" value="0" readonly>
+
+        <table>
+            <tr>
+                <td> <input type="button" value="%" onclick="func(value)"></td>
+                <td> <input type="button" value="CE" onclick="cls()"></td>
+                <td> <input type="button" value="C" onclick="cls()"></td>
+                <td> <input type="button" value="&lt;" onclick="back()"></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="7" onclick="func(value)"></td>
+                <td> <input type="button" value="8" onclick="func(value)"></td>
+                <td> <input type="button" value="9" onclick="func(value)"></td>
+                <td> <input type="button" value="X" onclick="func(value)"></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="4" onclick="func(value)"></td>
+                <td> <input type="button" value="5" onclick="func(value)"></td>
+                <td> <input type="button" value="6" onclick="func(value)"></td>
+                <td> <input type="button" value="-" onclick="func(value)"></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="1" onclick="func(value)"></td>
+                <td> <input type="button" value="2" onclick="func(value)"></td>
+                <td> <input type="button" value="3" onclick="func(value)"></td>
+                <td> <input type="button" value="+" onclick="func(value)"></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="+/-" onclick="func(value)"></td>
+                <td> <input type="button" value="0" onclick="func(value)"></td>
+                <td> <input type="button" value="." onclick="func(value)"></td>
+                <td> <input type="button" value="=" onclick="func(value)"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    
+    function func(value){
+    var calcNum = document.getElementById("win");
+    
+    }
+
+
+</script>
+
+</html>

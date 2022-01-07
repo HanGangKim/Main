@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            자손 선택자 : 해당 요소에서 하위 요소중에 특정타입을 선택하는 선택자 , 공백으로 구분
+                        상위선택자(공백)하위선택자{...}
+                        div p { 스타일 } : 자손선택자 꼭 한칸 띄우기(공백)로 정의
+
+                       
+            자식 선택자 : 해당 요소에서 "바로 밑" 하위 요소중에서 특정타입을 선택하는 선택자 . >으로 구분
+        
+        */
+        div{
+            border: 2px solid darksalmon;
+        }
+
+        /* 생각중...
+           바깥쪽 태그 + 한칸공백 + 안 쪽 태그 
+           기준은 바깥쪽 태그 기준 ?
+           상위태그 여러개 하위 태그 1개
+           하나 지정할 때 사용하면 좋을 듯?
+           다시 생각해 보니 자손은 여러개 설정에 용이 , 설정 범위가 큼
+           다이아몬드 기호(자식)에 따라서 설정되는 범위가 달라짐 
+           자손-공백 , 자식-다이아몬드
+
+           자손- 본인 안에 포함된거 걍 싸그리 다포함 , 자손은 어디서부터 어디까지
+                 걍 내 DNA면 포함 
+    
+           자식- 본인 안에 있는 것중 >(다이아몬드기호로) 지정한 것만 포함
+                 자식은 내 핏줄만 
+        */
+
+
+        /* 자손 선택자 */
+        div p {
+            /* 부모 태그 밑에 있는 모든 하위태그 */
+            background-color: darkseagreen;
+        }
+
+        div span p {
+            background-color: gray;
+        }
+
+        /* 자식 선택자
+            설정 범위가 작다 / 자신의 바로 밑에 있는것만 해당되기 때문에 
+        */
+        div > span {
+            /* 부모태그 바로 밑에 있는 하위태그 */
+            text-decoration: line-through;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1>자손 선택자</h1>
+        <p>div 태그 외부의 p 태그는 선택되지 않습니다.</p>
+
+    <div>
+        <p>div 태그 내부의 p 태그만 선택됩니다!</p>
+        <p>div 태그 내부의 p 태그만 선택됩니다!</p>
+        <p>div 태그 내부의 p 태그만 선택됩니다!</p>
+        <span>
+            <p>
+                이 태그는 span 태그로 감싸져 있는 p태그 입니다.
+                div 태그 바로 및이 아니기 때문에 자식선택자로 선택이 안됩니다.
+            </p>
+        </span>
+    </div>
+
+        <p>div 태그 외부의 p 태그는 선택되지 않습니다.</p>
+</body>
+</html>

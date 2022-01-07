@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        label{
+            cursor: pointer;
+        }
+    
+        .menu{
+            height: 200px;
+            width: 1000px;
+           border:royalblue solid ; 
+            
+        }
+
+        .menu > li{
+            float: left;
+            margin-right: 100px;
+            list-style-type: none;
+            position: relative;
+        }
+
+        .menu .submenu {
+           
+            position: absolute; /*메뉴3 하고 메뉴4를 붙일때 사용*/
+            margin-left: -40px;
+            width: 100px;
+            background-color: royalblue;
+            color: white;
+
+            border: blue solid ;
+            /* 모양 , 크기 , 위치를 바꿀 수 있는 속성 */
+            transform: scaleY(0); /* 현재 태그의 세로길이를 0%로 만든다 : 0~1 원본보다 작은 1 이상 원본보다 커짐*/
+            transform-origin: top ;
+            transition: all 0.3s;    
+        }
+
+
+        .menu .menuBtn:checked ~ .submenu{
+            transform: scaleY(1); 
+        }  
+
+        .menuBtn{
+            display: none;
+        }
+
+       
+       
+
+    </style>
+</head>
+
+<ul class="menu"> 
+    <li style="margin-left: -40px;"><a href="#">MENU1</a></li>
+    
+    <li><input type="checkbox" id="menuBtn2" class="menuBtn">
+        <label for="menuBtn2" class="labelBtn" onclick="">MENU2</label>
+        <ul class="submenu">
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        </ul>
+    </li>
+
+   
+   
+    <li><input type="checkbox" id="menuBtn3" class="menuBtn">
+        <label for="menuBtn3" class="labelBtn" onclick="">MENU3</label>
+        <ul class="submenu">
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        </ul>
+    </li>
+  
+    <li><input type="checkbox" id="menuBtn4" class="menuBtn">
+        <label for="menuBtn4" class="labelBtn" onclick="">MENU4</label>
+        <ul class="submenu">
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        <li><a href="#">submenu</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">MENU5</a></li>
+    
+    <li><a href="#">MENU6</a></li>
+
+    </ul>
+
+
+
+
+
+<body>
+    
+</body>
+</html>

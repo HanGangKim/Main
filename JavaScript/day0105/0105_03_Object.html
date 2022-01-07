@@ -1,0 +1,54 @@
+<script>
+
+    // Object : 숫자 , 문자 , 불리언 , undefined를 제외한 모든 것이 Object입니다.
+
+    // 클래스 : 변수(필드) , 메소드(기능)
+
+    // Object : 프로퍼티 , 메소드(함수)
+
+    var Person = { }; // object 선언 
+    // 키 와 값으로 구성 
+    // 키 : 문자열
+    // 값 : 일반적인 값 : 프로퍼티(property) >> object의 프로퍼티를 정의한다
+    // 값 : 함수 : 메소드 >> object의 메소드를 정의한다
+
+    //선언
+    var Person = {
+        키 : "값",         // 프로퍼티 선언
+        name : "한강",
+        age : 20,
+        birth : '123456',
+        pid : '1234567',
+
+        // 프로퍼티 값에는 함수도 들어갈 수 있습니다.(function)
+        // 객체안에 들어있는 함수이기 때문에 이름이 필요없습니다.
+         // 이 친구의 이름은 키 입니다. id()
+        id : function(){
+            return this.birth+this.pid;
+            // this : 현재 객체에 있는 값
+           }                   
+    };
+
+    // 호출방법 :
+    // 객체이름.프로퍼티이름
+    // 객체이름[프로퍼티이름]
+    document.write(Person.age+"<br>");
+    document.write(Person.birth+"<br>");
+    document.write(Person['birth']+"<br>");
+
+
+    // 호출 방법 :
+    // 객체이름.메소드이름()
+    document.write(Person.id()+"<br>");
+
+    // 함수의 전체내용 가져오기
+    document.write(Person.id+"<br>");
+
+    // 함수 : property 구성
+    // property : 이름(키) 값으로 구성 
+    //            이름과 값은 (:) 연결
+    //            쉼표(,)를 통해서 다른 property와 구분한다.
+
+
+
+</script>

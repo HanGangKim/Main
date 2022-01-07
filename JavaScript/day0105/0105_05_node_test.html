@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type = "button" name="btn" value="Node 버튼" onclick="func()">
+    <div>
+        <ul>
+            <li>1-1</li>
+            <li>1-2</li>
+            <li>1-3</li>
+        </ul>
+        <ul>
+            <li>1-4</li>
+            <li>1-5</li>
+            <li>1-6</li>
+        </ul>
+        <ul>
+            <li>1-7</li>
+            <li>1-8</li>
+            <li>1-9</li>
+        </ul>
+    </div>
+    <p id="nodeStd">시작점</p>
+    <div>
+        <ul>
+            <li>2-1</li>
+            <li>2-2</li>
+            <li>2-3</li>
+        </ul>
+        <ul>
+            <li>2-4</li>
+            <li>2-5</li>
+            <li>2-6</li>
+        </ul>
+        <ul>
+            <li>2-7</li>
+            <li>2-8</li>
+            <li>2-9</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+
+function func(){
+
+    // var nodeTest = "채워야할 빈칸".nodeName();
+    // document 문서 안에 nodeStd 라는 id 가진 값을 찾아서 그 안에 써있는 텍스트를 가져와라
+    // var nodeTest = document.getElementById("nodeStd").innerHTML;
+
+    //document.getElementById("nodeStd") : p 태그
+
+    // //document.getElementById("nodeStd").parentNode : p태그의 부모 : body
+    // var nodeTest = document.getElementById("nodeStd").parentNode.nodeName;
+
+    // //document.getElementById("nodeStd").parentNode.parentNode : p태그의 부모의 부모 : HTML
+    // var nodeTest = document.getElementById("nodeStd").parentNode.parentNode.nodeName;
+
+    //  //document.getElementById("nodeStd").parentNode.parentNode.childNodes[0] : p태그의 부모의 부모의 0번째 자식 : head
+    // var nodeTest = document.getElementById("nodeStd").parentNode.parentNode.childNodes[0].nodeName;
+
+    // //document.getElementById("nodeStd").parentNode.parentNode.lastChild : p태그의 부모의 부모의 마지막 자식 : body
+    // var nodeTest = document.getElementById("nodeStd").parentNode.parentNode.lastChild.nodeName;
+
+
+    //1-1
+    // var nodeTest = document.getElementById("nodeStd").parentNode.childNodes[1].nextSibling.nextSibling.childNodes[1].firstChild.nextSibling.firstChild.nodeValue;
+    // alert(nodeTest);
+
+    //1-9
+    // var nodeTest = document.getElementById("nodeStd").parentNode.childNodes[1].nextSibling.nextSibling.lastChild.previousSibling.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nodeValue;
+    // alert(nodeTest);
+    
+    //2-1
+    // var nodeTest = document.getElementById("nodeStd").nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.nodeValue;
+    // alert(nodeTest);
+
+    //2-5
+    var nodeTest = document.getElementById("nodeStd").nextSibling.nextSibling;
+    alert(nodeTest);
+    //      parentNode : 부모 노드
+    //      childNodes : 자식 노드 리스트
+    //      firstChild : 첫 번째 자식 노드
+    //      lastChild : 마지막 자식 노드
+    //      nextSibling : 다음 형제 노드
+    //      previousSibling : 이전 형제 노드
+
+    
+}
+
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+var answer = prompt("로또번호를 입력해주세요. '/' 기준으로 다음 숫자 입력 \n"+
+"입력예시>1/2/3/4/5/6");
+var spAnswer = answer.split("/" , 6);
+spAnswer.sort(function(a,b){return a-b}); // 입력숫자 정렬
+document.write("사용자번호:"+spAnswer+"<br>"); // 사용자 입력숫자 출력
+
+var ranArr = [];
+
+// 중복제거
+for(var i = 0 ; i<6 ; i++){
+    var ran =Number(Math.floor((Math.random()*8)+1));
+    if (ranArr.indexOf(ran) == -1) { 
+        // indexOf == -1 : 일치하는 값이 없으면 -1 반환
+        // indexOf의 값이 -1 이라는 것은 일치하는 값이 없다는 뜻
+        ranArr.push(ran) // 일치하는 값이 없다면 push(ran)
+
+        }else{
+        // 값이 일치한다면 따로 push 하지 않고 횟수차감
+        i--; // 반복횟수를 줄여줌
+        }
+        ranArr.sort(function(a,b){return a-b}); // 로또번호 정렬
+}
+
+document.write("<br>");
+document.write("당첨번호"+ranArr); // 전체번호 출력
+document.write("<br><br>");
+
+var count = 0;
+// 당첨갯수 확인
+for(var i = 0 ; i<ranArr.length ; i++){
+    for(var j = 0 ; j<spAnswer.length ; j++){
+    if(spAnswer[i]==ranArr[j]){
+        count++;
+    }
+}
+}
+document.write("맞은갯수:"+count);
+
+
+</script>
+</html>

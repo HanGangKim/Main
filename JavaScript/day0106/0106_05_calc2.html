@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style type="text/css">
+
+        #container{
+            width: 400px;
+            margin: auto;
+        }
+
+        table , tr , td{
+            border: 1px black solid;
+            border-collapse: collapse ;
+        }
+
+        #sub{
+            width:  407px;
+            height: 40px;
+            text-align: right;
+            font-size: 20px;
+            border : 1px black solid ;
+
+        }
+
+        #win{
+            width:  407px;
+            height: 80px;
+            text-align: right;
+            font-size: 40px;
+            border : 1px black solid ;
+        }
+
+        td{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+        }
+
+        input[type="button"]{
+            border: 0px;
+            padding: 0px;
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        input[type="button"]:hover{
+            background-color: rgb(194, 194, 194);
+        }
+
+    </style>
+
+<body>
+        <div id="container">
+            <h3>계산기</h3>
+            <input type="text" id="sub" value="" readonly>
+            <input type="text" id="win" value="0" readonly>
+    
+            <table>
+                <tr>
+                    <td> <input type="button" value="%" onclick="func(value)"></td>
+                    <td> <input type="button" value="CE" onclick="cls()"></td>
+                    <td> <input type="button" value="C" onclick="cls()"></td>
+                    <td> <input type="button" value="&lt;" onclick="back()"></td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="7" onclick="func(value)"></td>
+                    <td> <input type="button" value="8" onclick="func(value)"></td>
+                    <td> <input type="button" value="9" onclick="func(value)"></td>
+                    <td> <input type="button" value="X" onclick="func(value)"></td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="4" onclick="func(value)"></td>
+                    <td> <input type="button" value="5" onclick="func(value)"></td>
+                    <td> <input type="button" value="6" onclick="func(value)"></td>
+                    <td> <input type="button" value="-" onclick="func(value)"></td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="1" onclick="func(value)"></td>
+                    <td> <input type="button" value="2" onclick="func(value)"></td>
+                    <td> <input type="button" value="3" onclick="func(value)"></td>
+                    <td> <input type="button" value="+" onclick="func(value)"></td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="+/-" onclick="func(value)"></td>
+                    <td> <input type="button" value="0" onclick="func(value)"></td>
+                    <td> <input type="button" value="." onclick="func(value)"></td>
+                    <td> <input type="button" value="=" onclick="func(value)"></td>
+                </tr>
+            </table>
+        </div>
+
+</body>
+
+<script>
+
+arr =  [];
+
+    function func(value){
+        // value를 형변환할때 숫자 or NaN
+    
+        if(isNaN(Number(value))){  // isNan , ture / false 나누는 문장  
+            // alert(value + "문자"); // 확인용
+            signFunc(value); // 사칙연산 , 문자
+        }else{
+            // alert(value+"숫자") // 확인용
+            numFunc(value) // 숫자 , 문자
+        }
+    }
+
+    function numFunc(value){
+       // value : 내가 누른 버튼의 숫자
+       // 숫자를 가지고서 text 박스의 value를 변경 
+
+        var calc = document.getElementById("win");
+
+        if(calc.value==0){ // calc의 값이 0일때는 0+숫자
+        Number(calc.value) = Number(calc.value) + Number(value);
+        }else{  // 값이 들어오고나서 부터는 문자열형으로 옆에 숫자를 붙여줄것
+            calc.value = calc.value + value;
+        }   
+    }
+
+
+function cls(){
+    // 현재값을 다 지우는 함수
+    var calc = document.getElementById("win");
+    calc.value = 0;
+}
+
+function back(){
+    // 현재값에서 맨 뒤에 한글자를 지우는 함수
+    var calc = document.getElementById("win");
+    calc.value = calc.value.slice(0,1); // 문자열도 배열이라서 slice를 사용할 수 있음
+
+    if(calc.value.length==0){
+        calc.value = 0;
+    }
+
+}
+
+function signFunc(value){
+
+    var calc = document.getElementById("win"); 
+    var calc_val = calc.value;
+    calc.value = 0;
+
+    arr.push(calc_val); // 숫자를 배열에 넣음(문자형으로)
+    arr.push(value); // 기호를 배열에 넣음 
+    alert(arr);
+
+    if(value == "="){
+
+        var i = 0;
+        var sum = arr[i];
+
+        if(arr.length>1){ //배열에 값이 있다면
+            while ( i < arr.length){
+            //  opFunc( 문자     ,   합산     ,  추가계산 )
+              sum =   opFunc(arr[i+1] , Number(sum) , Number(arr[i+2]))
+                i+=2
+            }
+        }
+        arr=[];
+        calc.value = sum;
+    }
+}
+
+function opFunc(op,a,b){
+        var sum = a;
+        switch(op){
+            case '+':
+                sum += b;
+                break;
+            case '-':
+                sum -= b;
+                break;
+            case 'X':
+                sum *= b;
+                break;
+            case '/':
+                sum /= b;
+                break;
+            case '%':
+                sum %= b;
+                break;
+        }
+        return sum;
+    }
+
+</script>
+
+</html>

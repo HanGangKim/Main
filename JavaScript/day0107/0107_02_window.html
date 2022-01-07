@@ -1,0 +1,49 @@
+<script>
+
+/*
+    window 객체 : BOM 모델 안에 있는 객체 
+              Browser Object Model : 웹표준 아니기 때문에
+
+    표준이 뭐냐 ?
+    HTML , CSS , JavaScript : 막나간다 , 자바처럼 규칙이 엄격한 것도 아니고 유연합니다.
+                              개발자의 성격에 따라 코드가 천차만별 입니다.
+                              class = "속성" , myclass = "속성" : 관리의 측면에서 불안 
+                              웹표준 : 개발자의 사용성이 증가 , 접근성이 증가 
+                              W3C 권고사항 
+
+    window 객체 : 웹브라우저의 창 / 전역객체 , DOM 요소들은 모두 window객체의 프로퍼티                           
+
+*/
+
+// var windowW = window.innerWidth;
+// var windowH = window.innerHeight;
+
+// document.write("현재 웹브라우저의 너비"+windowW+"<br>")  // 너비단위는 px(픽셀)
+// document.write("현재 웹브라우저의 너비"+windowH+"<br>")
+
+var obj;
+function openWin(){
+    // window.open(url , name , specs , replace)
+    // url : 보여줄 페이지 
+    // name : 속성(어떻게 창을 열것이냐) , 이름 
+    //       - _blank ( 새창 , 기본값 ) , _self (현재창) , _parent (부모프레임)
+
+    // specs : 페이지가 열릴때 창의 크기 , 스크롤 여부 , 크기변경여부 *IE 에서만 정상작동 
+    // 팝업
+
+    obj = window.open("https://naver.com", "_blank" , "width=400px , height=300px");
+}
+
+function closeWin(){
+    obj.close();
+}
+
+</script>
+
+<body>
+    
+<h1>새 창 열기</h1>
+<button onclick="openWin()">새창열기</button>
+<button onclick="closeWin()">새창열기</button>
+
+</body>

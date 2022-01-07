@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- 비어있는 body 태그 -->
+
+<button onclick="addDiv()">추가버튼</button>
+
+<br>
+<h1>선택자연습</h1>
+<ul>
+    <li>1번째</li>
+    <li id="green" class="even">2번째</li> <!-- ID는 하나만 적용  -->
+    <li>3번째</li>
+    <li id="green" class="even">4번째</li> <!-- ID는 하나만 적용 , 위에서 적용됨 -->
+    <li>5번째</li>
+</ul>
+<br>
+<button onclick="red()">빨강버튼</button>
+<button onclick="blue()">파랑버튼</button>
+<br>
+<button onclick="green()">초록버튼</button>
+<button onclick="yellow()">노랑버튼</button>
+</body>
+
+<script type="text/javascript">
+/*
+    HTML 페이지 안에 구조를 만들고 , 구조에 대한 값 ( value or 태그사이에 있는 값) 가져와서 추출
+
+    if 문이나 for문 으로 데이터를 가공 , 그에 따라서 기능을 입히거나 등등 
+
+    HTML 구조 : DOM : 문서 객체 모델 , Document Object Model 
+
+    document : HTML 태그 덩어리 , 웹페이지 그자체(웹페이지를 지칭하는 변수)
+               도큐먼트(document)를 시작으로 요소들을 선택할 수 있다.
+
+    document.HTML.HEAD / 도큐먼트(document)안에 덩어리로 있는 태그를 찾는 것
+
+    document 를 이용해서
+    1. HTML 새로운 요소(태그)나 속성을 추가할 수 있다.
+    2. HTML 존재하는 요소(태그)나 속성을 제거할 수 있다.
+    3. 요소 변경 , 요소 속성 변경
+    4. CSS 스타일 기능
+    5. 이벤트(클릭, 드래그 ...등) 추가 , 제어
+
+    document.write () ; >> HTML 태그안에 내가 원하는 내용을 작성해라 , 문자열의 형태로
+
+    JS 에서도 선택자 !!
+
+    1. 태그이름 
+    2. ID 선택
+    3. ClASS 선택
+    4. NAME 선택
+    5. CSS선택자를 이용해서 선택
+
+*/  
+
+// document.write("<h1>HTML 태그안에 작성해주세요</h1>");
+// document.write("<br>");
+// document.write("<table border=1>");
+// document.write("<tr> <td>1</td> <td>2</td> </tr>");
+// document.write("<tr> <td>3</td> <td>4</td> </tr>");
+// document.write("<tr> <td>5</td> <td>6</td> </tr>");
+// document.write("</table>");
+// document.write("&lt; p &gt; 123");
+// document.write("<p>123");
+
+
+
+// 요소를 추가 : Java 메소드와 비슷한 기능 
+function addDiv(){
+
+    var addDiv = document.createElement("div");
+
+    var addContent = document.createTextNode("추가된 div")
+    addDiv.appendChild(addContent);
+
+    document.body.appendChild(addDiv);
+
+}
+
+/*
+JS 에서도 선택자 !!
+
+    1. 태그이름 
+    2. ID 선택
+    3. ClASS 선택
+    4. NAME 선택
+    5. CSS선택자를 이용해서 선택
+
+*/ 
+
+// 1. 태그이름 모든 요소 선택 , 배열 , 다중
+// document.getElementsByTagName(태그이름);
+
+// 2. ID 선택 , 단일
+// document.getElementById(아이디);
+
+// 3. CLASS 모든 요소선택 , 배열 , 다중
+// document.getElementsByClassName(클래스이름);
+
+// 4. NAME 모든 요소선택 , 배열 , 다중
+// document.getElementsByName(name 속성값);
+
+// 5. CSS선택자를 이용해서 모든 요소선택 , 배열 , 다중
+// document.querySelectorAll(선택자);
+
+
+function red(){
+    var selectLi = document.getElementsByTagName("li");
+    for(var i = 0; i<selectLi.length; i++){
+        selectLi.item(i).style.color="red"
+    }
+
+}
+
+function blue(){
+    var selectLi = document.getElementsByTagName("li");
+    for(var i = 0; i<selectLi.length; i++){
+        selectLi.item(i).style.color="blue"
+    }
+}
+
+function green(){
+    var selectLi = document.getElementById("green");
+        selectLi.style.color="green"
+}
+
+function yellow(){
+    var selectLi = document.getElementsByClassName("even");
+    for(var i = 0; i<selectLi.length; i++){
+        selectLi.item(i).style.color="yellow"
+    }
+}
+
+</script>
+
+</html>

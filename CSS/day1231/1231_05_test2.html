@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+table{
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: black; 
+}
+
+tr{
+    border-style: solid;
+    border-color: black; 
+   
+}
+
+.pink{
+    background-color: rgb(92, 254, 146);
+}
+
+</style>
+
+</head>
+<body>
+    <table id="t01" border="1" >
+        <tr>
+            <td class="pink">
+                ID
+            </td>
+               
+            <td >
+                <input type="text">
+                <input type="button" value="ID중복확인">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pink">
+                비밀번호
+            </td>
+
+            <td>
+                <input type="text"><br>
+                대소문자 , 숫자 , 조합 , 8 ~ 12 자리
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td class="pink">
+                비밀번호 확인
+            </td>
+
+            <td colspan="3">
+                <input type="text">                            
+            </td>
+        </tr>
+        <tr>
+         
+        </tr>
+
+        <tr>
+            <td class="pink">
+                이름
+            </td>
+
+            <td>
+                <input type="text">
+            </td>
+
+        
+        </tr>
+
+        <tr>
+            <td class="pink" >
+                성별
+            </td>
+
+            <td>
+                <input type="button"  value="남성">
+                <input type="button"  value="여성">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pink">
+                취미
+            </td>
+
+            <td >
+                <input type="checkbox"  value="독서">독서
+                <input type="checkbox"  value="영화감상">영화감상
+                <input type="checkbox"  value="음악감상">음악감상
+                <input type="checkbox"  value="스포츠">스포츠
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pink">
+                언어
+            </td>
+
+            <td>
+                <select name ="pick">
+                    <option selected="selected">선택</option>
+                    <option></option>
+                </select>
+        </tr>
+
+        <tr>
+            <td class="pink">
+                건의사항
+            </td>
+
+            <td colspan="3">
+                <input type="text" style="width: 300px; height: 140px; margin-right: 50px;"> 
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pink">
+                파일업로드
+            </td>
+
+            <td>
+                파일업로드 <input type="button"  value="파일선택">선택된 파일없음
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+            <center>
+            <input type="button" style="margin-bottom: 2px; width: 60px;"  value="등록">
+            <input type="button" style="margin-bottom: 2px;  width: 60px;" value="취소">
+            </center>
+            </td>
+        </tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // var 선언으로 변수 선언 
+        // 1. 숫자 (number)
+        // 2. 문자열(string)
+        // 3. 불리언 (boolean)
+        // 4. undefined (undefined)
+        // 5. 심볼 (추후 다룰 예정)
+        // 6. 객체(Object)
+
+        var n1 = 10;    // 숫자
+        var n2 = 10.1; // 소수점을 알아서 인식
+        var n3 = 10e3; // 10 000 : 1만 , e는 0을 지칭 그 뒤에는 0의 갯수 (+제곱의 개념)
+        var n4 = 10e-3; // 0.01  
+
+        var s1 = "안녕" // 문자 : 더블쿼터
+        var s2 = '안녕' // 문자 : 싱글쿼터
+        var s3 = '"안녕"하세요' // 더블쿼터를 감싼 싱글쿼터
+        var s4 = "'안녕'하세요" // 싱글쿼터를 감싼 더블쿼터
+    //  var s5 = ""안녕"하세요"; // 더블쿼터로 더블쿼터 감싸면 오류
+
+        alert(s3); // 경고창으로 값을 확인
+        alert(s4); 
+
+        // * 싱글쿼터나 더블쿼터 무관 , 서로 감싸주기만 하면 됨
+
+        // + : 문자와 숫자에 대한 형변환이 관대
+
+        var b1 = true; // 불리언
+        var un; // 정의된게 없다 : undefined : 타입조차 없는 상태 
+        var nul = null; // 널 : (눌x) 타입은 있는데 값이 저장해지지 않은 상태 
+
+        // 자료형에 대해서 관대하기때문에 확인 명령어 : typeof
+        document.write(typeof 10+"<br>"); // 숫자인지 확인
+        document.write(typeof '안녕'+"<br>"); // 문자형인지 확인
+        document.write(typeof true +"<br>"); // 불린형인지 확인
+        document.write(typeof n1 +"<br>"); 
+        document.write(typeof s1 +"<br>"); 
+        document.write(typeof b1 +"<br>"); 
+        document.write(typeof un +"<br>"); // undefined : 타입이 지정 안되어 있는 상태
+        document.write(typeof nul +"<br>"); // object : 객체 
+
+
+        var test = 10;
+        document.write(test+" "+typeof test + "<br>")
+
+        test="문자입력"
+        document.write(test+" "+typeof test + "<br>")
+        // 자바스크립트 : 타입에 대해서 굉장히 유연한 언어 , 묵시적 타입변환 > 알아서 문자열로 만들어주고 , 알아서 숫자로 만들어주고
+        
+        document.write("3*5"+ "<br>") // 문자로 출력
+
+        document.write("3"*"5"+ "<br>") // 숫자 만들어있는 문자열들을 계산할때 알아서 형변환
+        // + 예외 : 문자열 + 숫자 , 숫자 + 숫자 >> 형변환을 강제로 해줘야 함 
+
+        document.write(3*5+ "<br>")
+
+        // 변수의 자료형이 있다보니까 형변환하는 법이 필수로 존재한다. 
+        // 숫자변환 > Number( 변환할값 )
+        // 문자변환 > String( 변환할값 )
+        // 불리언변환 > Boolean( 변환할값 )
+        // 객체변환 > Object( 변환할값 )
+
+        // 선언만 
+        var i;
+
+        // 대입만
+        i = 10;
+
+        // 선언과 대입
+        var i = 10;
+
+        // i 라는 변수 2개 쓰고 있죠 ? > 기존 선언된 i를 없애고 다시 재선언 
+        // 자바에서는 기존 선언된 변수명 사용불가
+        // 자바스크립트에서는 기존 선언된 변수명도 재선언과 대입을 동시에 하면 사용가능 
+
+        var i; // 무시된 것
+
+        var i = 10;
+        num[10,20,30]; // 배열선언
+        var i; // 재선언은 실패  * 재선언만 하고 대입을 안해서 
+        var i = 10; // 재선언과 대입을 해서 성공
+        document.write(i+ "<br>")
+
+        // 한 변수명에 다른 타입의 값으로 여러번 대입해서 사용가능
+        // 한번 사용한 변수명은 재선언만 해서는 사용불가능 , 대입까지 해야 사용가능
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

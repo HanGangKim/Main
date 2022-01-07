@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+
+/* 시작 태그 */
+.redBox{
+    background-color: white;
+    color : red;
+    /* 시작태그 사이즈 설정 꼭 해줘야함 */
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    border-style: solid;
+    border-width: thin;
+}
+
+.greenBox{
+    background-color: rgb(136, 204, 0);
+    color : black;
+    height: 70px;
+    border-style: none;
+    border-width: thin;
+}
+
+.yellowBox{
+    background-color: yellow;
+    color : black;
+    height: 150px;
+    border-style: none;
+    border-width: thin;
+}
+
+
+.footerBox{
+    background-color: white;
+    color : black;
+    height: 50px;
+    border-style: solid;
+    border-width: thin;
+    clear: both;
+}
+
+
+
+section{
+    border: 1px;
+    background-color: white;
+    color : black;
+    width: 660px;
+    height: 440px;
+    border-style: solid;
+    border-width: thin;
+    float: left;
+}
+
+sidebar{
+    border: 1px;
+    background-color: white;
+    color : black;
+    width: 250px;
+    height: 180px;
+    border-style: solid;
+    border-width: thin;
+    float: right;
+}
+
+b{
+    font-size: 20px;
+}
+
+.table{
+    text-align: center;
+    width: 600px;
+    /* 테이블과 테두리를 합쳐주는 속성 */
+    border-collapse: collapse;
+   
+}
+
+
+
+    </style>
+
+</head>
+<div class="redBox">
+<body>
+    <header  style="padding: 8px;">
+        <div class="greenBox" style="padding: 16px;"><b style="font-size: 25px;">ONLINE SSAFY</b><br><br>
+        <a style="color: green;">&emsp;메뉴1&emsp;메뉴2&emsp;메뉴3&emsp;메뉴4&emsp;</a>
+        </div>
+    </header>
+
+    <section style="margin: 8px; padding: 16px;" >
+        <b>기사1</b>
+        <div class="yellowBox" style="margin: 8px;">
+            <p>재산권의 행사는 공공복리에 적합하도록 하여야한다. 정부는 회계연도마다<br>
+              예산안을 편성하여 회계연도 개시 90일전까지 국회에 제출하고 , 국회는 회계<br>
+              연도 개시 30일전까지 이를 의결하여야한다.<br>
+              <br>
+              대통령의 임기가 만료되는 때에는 임기만료 70일 내지 40일전에 후임자를 선<br>
+              거한다. 제2항과 제3항의 터분에 대하여는 뱁원에 재소할 수 없다. 언론, 출판<br>
+              에 대한 허가나 검열과 집회 결사에 대한 허가는 인정되지 아니한다.</p> <br>
+        </div>
+        <br> 
+
+        <b>기사2</b>
+        <table style="margin: 8px;" class="table" >
+            <tr style="background-color: rgb(13, 71, 161); color: white;">
+                <th>
+                    번호 
+                </th>
+                <th>
+                    제목 
+                </th>
+                <th>
+                    작성자 
+                </th>
+            </tr>
+        
+
+     
+            <tr style="background-color: rgb(227,  242, 253);">
+                <td>
+                    1
+                </td>
+                <td>
+                    이 헌법시행 당시의 대법원장과 대법원 판사가...
+                </td>
+                <td>
+                    강감찬
+                </td>
+            </tr>
+       
+
+        
+            <tr style="background-color: rgb(187,  222, 251);">
+                <td>
+                    2
+                </td>
+                <td>
+                    대한민국은 국제평화의유지...
+                </td>
+                <td>
+                    장영실
+                </td>
+            </tr>
+       
+
+     
+            <tr style="background-color: rgb(227,  242, 253);">
+                <td>
+                    3
+                </td>
+
+                <td>
+                    정당은 법률이 정하는 바에...
+                </td>
+
+                <td>
+                    안중근
+                </td>
+
+            </tr style="background-color: rgb(187,  222, 251);">
+                 <td>
+                    4
+                 </td>
+
+                <td>
+                    공공필요에 의한 재산권 수용
+                 </td>
+
+                <td>
+                     김두한
+                </td>
+
+    
+            <tr style="background-color: rgb(227,  242, 253);">
+                <td>
+                    5
+                 </td>
+
+                <td>
+                    국회의원은 그 지위를 남용하여 국가...
+                 </td>
+
+                <td>
+                    계백
+                </td>
+
+            </tr>
+        
+
+      
+            <tr style="background-color: rgb(187,  222, 251);" >
+                <td>
+                    6
+                 </td>
+
+                <td>
+                    정기회의 회기느 100일을 , 초과할 수 없다
+                 </td>
+
+                <td>
+                    최무선
+                </td>
+            </tr>
+        </table>
+
+
+    </section>
+        
+    
+   <sidebar style="margin: 8px; padding: 8px;"> 
+        <br>
+        &emsp;<b>SIDEBAR</b><br>
+       <p> &emsp;모든 국민은 근로의 의무를 진<br>
+        &emsp;다. 국가는 근로의 의무의 내용<br>
+        &emsp;과 조건을 민주주의원친에 따<br>
+        &emsp;라 법률로 정한다.</p><br>
+        <br>
+    </sidebar>  
+
+    <footer style="padding: 8px;">
+    <div class="footerBox" style="padding: 8px;"    >
+        <b>footer</b><br>
+        <a>이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 효력을 지속한다.</a>
+    </div> 
+</footer>
+</div>
+</body>
+</div>
+</html>

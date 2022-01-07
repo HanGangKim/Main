@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0px;
+        }
+        .menuBtn{
+            display: none;
+        }
+        a,label {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }
+        li {
+            text-align: center;
+            list-style-type: none;
+        }
+        .mainmenu > li{
+            
+            float: left;
+            width: 100px;
+            position: relative;
+        }
+
+        .mainmenu .submenu{
+            position: absolute; /*메뉴3 메뉴4 붙일때 사용 */
+            width: 100px;
+            background-color: yellowgreen;
+            color: white;
+            /*모양, 크기, 위치를 바꿀수있는 속성 */
+            transform: scaleY(0); /*현재태그의 세로길이를 0%만든다 : 0 ~ 1 원본보다 작은 1 이상 원본보다 커짐 */
+            transform-origin: top;
+            /* display: none; */
+            transition: all 0.3s;
+        }
+
+        .mainmenu .menuBtn:checked ~ .submenu{
+            /* display: block; */
+            transform: scaleY(1); /*현재태그의 세로길이를 100%만든다 */
+        }
+
+    </style>
+</head>
+<body>
+    <p>빨간색 글씨를 클릭해 보세요!</p>
+    <br>
+    <br>
+    <ul class="mainmenu">
+        <li><a href="#">MENU1</a></li>
+        <li><input type="checkbox" id="menuBtn2" class="menuBtn" >
+            <label for="menuBtn2" class="laberBtn" onclick="">MENU2</label>
+            <ul class="submenu">
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+            </ul>
+        </li>
+        <li><input type="checkbox" id="menuBtn3" class="menuBtn">
+            <label for="menuBtn3" class="laberBtn" onclick="">MENU3</label>
+            <ul class="submenu">
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+            </ul>
+        </li>
+        <li><input type="checkbox" id="menuBtn4" class="menuBtn">
+            <label for="menuBtn4" class="laberBtn" onclick="">MENU4</label>
+            <ul class="submenu">
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+                <li><a href="#" >submenu</a></li>
+            </ul>
+        </li>
+        <li><a href="#">MENU5</a></li>
+        <li><a href="#">MENU6</a></li>
+      </ul>  
+</body>
+</html>

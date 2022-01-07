@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  div{
+      animation-duration: 3s;
+      animation-name: rotate-center;
+      width: 100px;
+      height: 1000px;
+      background-color: skyblue;
+      animation-fill-mode: forwards;
+  }
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(1000);
+            transform: rotate(1000);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(1000);
+            transform: rotate(1000);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+/* ----------------------------------------------*/
+
+.a{
+animation-name: scale-up-bottom;
+animation-duration: 3s;
+width: 100px;
+height: 100px;
+}
+
+ @-webkit-keyframes scale-up-bottom {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+}
+@keyframes scale-up-bottom {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+}
+
+</style>
+<body>
+    <div>안녕</div>
+    <div class="a">안녕</div>
+</body>
+</html>

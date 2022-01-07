@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+
+<form name="frm">
+<select name="play" size="8">
+   <option selected> 숨쉬기 </option>
+   <option> 밥먹기 </option>
+   <option> 그냥있기 </option>
+   <option> 잠자기 </option>
+   <option> 술먹기 </option>
+   <option> 멍때리기 </option>
+</select> <br>
+
+<input type="button" value="▲" id='up'><br><br>
+<input type="button" value="▼" id='down'><br><br>
+</form>
+</body>
+
+<script type="text/javascript">
+
+    document.getElementById("up").addEventListener("click" ,function(){
+    var sel = document.getElementsByTagName("select")[0];
+    // selectedIndex : 선택된 친구의 인덱스번호를 가지고 있는 변수
+    var idx = sel.selectedIndex;
+    // options : 현재 options에 대한 배열
+    var optSel = sel.options;
+    var str = optSel[idx].text; // 기준
+    // optSel[idx-1].text; : 바꿔야할 대상
+     if(idx >0){
+        optSel[idx].text = optSel[idx-1].text;
+        optSel[idx-1].text = str;
+        optSel[idx].selected = false;
+        optSel[idx].selected = true;
+     }
+    });
+
+    
+
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown_div{
+            display: none;
+            position: absolute;
+            background-color: orangered;
+            width: 60px;
+            height: 10px;
+            padding: 20px;
+        }
+
+        .dropdown:hover .dropdown_div{
+            text-align: center;
+            display: block;
+        }
+
+        /* ------------------------------------------------------- */
+
+        .dropdown ul {
+            background-color: wheat;
+            width: 100px;
+            list-style-type: none;
+            margin: 0; /* 0px 0em 0% */
+            padding: 0;
+        }
+        .dropdown li a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bolder;
+            color: black;
+        }
+
+        .dropdown li a:hover{
+            background-color: burlywood;
+            color: white;
+            
+        }
+
+    p{
+        color: white;
+        margin-top: -10px;
+        margin-left:-10px ;
+       
+    }
+      
+    </style>
+</head>
+<body>
+
+    <div class="dropdown">
+        <ul>
+            <li><a href="#" class="change">HOME</a></li>
+            <div class="dropdown_div"><p>짠!</p></div>
+        </ul>      
+    </div>
+
+
+    
+</body>
+</html>

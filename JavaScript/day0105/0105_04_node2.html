@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 이 공간은 비어져 있어 없는거 같지만 #text(텍스트 노드)가 존재  -->
+<!-- 주석이 쓰여진 시점부터는 text -> comment로 변경 -->
+
+<body>
+    <h1>node 연습</h1>
+    <button onclick="nodeTest()">연습결과</button>
+    <p id="nodeTest1"> </p>
+    <p id="nodeTest2"> </p>
+    <p id="nodeTest3"> </p>
+    <p id="nodeTest4"> </p>
+    <p id="nodeTest5"> </p>
+
+    <br>
+
+    <ul class="listTest">
+        <li>테스트</li>
+        <li>테스트</li>
+        <li>테스트</li>
+        <li>테스트</li>
+    </ul>
+
+
+</body>
+
+<script>
+
+    document.write("I love Java");
+
+    console.log(document.childNodes[1].childNodes); // F12 관리자 도구에서 확인 가능 , 콘솔로그
+    console.log(document.children[0].children);
+    document.getElementById("nodeTest1").innerHTML = document.childNodes[1].nodeName; // HTML
+    // document.getElementById("nodeTest1").innerHTML = document.childNodes[1].nodeType; // 1 
+
+
+    document.getElementById("nodeTest2").innerHTML = document.childNodes[1].childNodes[0].nodeName; // HEAD
+
+    document.getElementById("nodeTest3").innerHTML = document.childNodes[1].childNodes[1].nodeName; // #text , 현재는 주석을 넣어서 #comment
+    // 줄바꿈 때문에 생기는 현상 : 줄바꿈 textNode가 문제
+    // childNodes : 모든 자식 노드에 접근
+    // children : 모든 자식 요소 노드에만 접근 
+    // parentNode : 모든 부모 노드에 접근
+    // parentElement : 부모노드가 요소노드일때만 접근
+
+    document.getElementById("nodeTest4").innerHTML = document.children[0].children[1].children[0].nodeName; // H1
+
+    document.getElementById("nodeTest4").innerHTML = document.children[0].children[1].children[1].childNodes[0].nodeValue; // 연습결과 
+
+
+
+    // 접근 접근한 노드의 정보를 보는 방법 3가지
+    // nodeName : 노드의 이름을 가져오는 property(값)프로퍼티
+    // 문서노드.nodeName > #document
+    // 텍스트노드.nodeName >#text
+    // 요소노드.nodeName > 태그이름(영문자 대문자)
+    // 속성노드.nodeName > 속성이름
+    
+    // nodeValue : 노드의 값을 가져오는 property
+    // 요소노드.nodeValue : undifined 
+    // 속성노드.nodeValue : 속성값
+    // 텍스트노드.nodeValue : 문자열
+
+    // nodeType : 노드의 고유타입 번호를 가져오는 property
+    // 요소.nodeType : 1
+    // 속성.nodeType : 2
+    // 텍스트.nodeType : 3
+    // 주석.nodeType : 8
+    // 문서.nodeType : 9
+
+
+        
+
+</script>
+</html>

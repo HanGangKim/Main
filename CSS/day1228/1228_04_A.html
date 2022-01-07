@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+
+        a{
+            text-decoration: none;
+        }
+
+        #blue{
+            background-color: rgb(0, 136 , 254);  /* 백그라운드 컬러(버튼색) */ 
+            color: white;  /* 글씨색 */
+            width: 150px;  /* 가로 */
+            height: 50px;  /* 높이 */
+            padding: 10px 25px;  /* 테두리 간격 */
+
+            border-style: dotted; /* 테두리 모양 */
+
+            font-size: 20px;  /* 글씨사이즈 */
+            font-weight: bolder;  /* 글씨 굵기 */
+            letter-spacing: 2px;  /* 글씨 간격 */
+            border-radius: 10px;  /* 버튼 몰딩처리  */
+        }
+
+        
+        #dark{
+            background-color: darkgray;
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 50px;
+            font-size: 20px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            border-radius: 10px;
+        }
+
+
+        /* : (콜론)을 통해서 이벤트가 발생했을때 상태를 정할 수 있습니다. 
+            a 태그 : 클릭이 되면 어떠한 링크로 전달
+            
+            // css 와 js 상태변화를 주는 '이벤트'라고 표현합니다
+            첫 기본상태 : 파란글씨
+            클릭한 이후 : 보라글씨
+            마우스가 올라오는 상애
+            마우스로 클릭한 상태
+        
+        */
+
+        #dark:hover{  /* 마우스가 올라온 상태 */
+            background-color: rgb(0, 136 , 254);
+        }
+       
+
+        
+
+    </style>
+
+</head>
+
+
+<body>
+    <a id="nomal" href="#">링크버튼1</a><br><br>    
+    <a id="blue" href="#">링크버튼2</a><br><br>   
+    <a id="dark" href="#">링크버튼3</a><br><br> 
+   
+
+</body>
+
+
+</html>

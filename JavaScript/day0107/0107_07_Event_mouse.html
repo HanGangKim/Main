@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color1{
+            color: red;
+        }
+            /* 추가된 클래스에 색상부여 */
+        .color2{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <p id="p_clcik" onclick="m_click()">안녕하세요</p> -->
+    <p id="p_click">안녕하세요</p>
+    <p id="m_click">마우스 up</p>
+</body>
+<script type="text/javascript">
+    /*
+     click : 마우스 클릭시 
+     mouseover : 마우스 커서가 해당 태그로 올라왔을때
+     mouseout : 마우스 커서가 해당 태그에서 떠났을때
+     mousedown : 마우스를 눌렀을때
+     mouseup : 마우스를 떼었을때
+
+     onclick 처럼 on 단어를 붙이면 태그 안에서도 바로 작성이 가능합니다.
+     on이 없을때는 <script> 안에서 작성해야합니다. addEventListener
+
+     * 이벤트간의 충돌이 날 수 있기 때문에 조심할 것   
+
+    */
+        var p = document.getElementById("p_click")
+        p.addEventListener("click" , m_click);
+        p.addEventListener("mouseover" , m_over); 
+        p.addEventListener("mouseout", m_out);
+        p.addEventListener("mousedown", m_down); // up하고 down은 충돌이 날 수 있음
+
+        var m = document.getElementById("m_click")
+        m.addEventListener("mouseup", m_up);
+
+        function m_click(){
+          p.innerHTML="클릭되었습니다.";
+          p.classList.remove("color1" , "color2") // 아래에서 추가한 클래스를 삭제
+        }
+
+        function m_over(){
+            p.setAttribute("class","color1"); // 마우스커서가 올라왔을때 color1 클래스 추가
+        }
+
+        function m_out(){
+            p.setAttribute("class","color2");// 마우스커서가 올라왔을때 color2 클래스 추가
+        }
+
+        function m_down(){
+            alert("마우스 down");
+        }
+
+        function m_up(){
+            prompt("마우스 up");
+        }
+
+
+</script>
+</html>

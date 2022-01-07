@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        변수관련해서는 굉장히 유연한 언어이다.
+         보통 body 밑에 작성합니다.
+         숫자형 , 문자열형 , 불리언형(참,거짓) 정의가되지 않은 것(undefined) , 객체형(object)
+
+         출력방식이 4가지
+         디버그 콘솔방법                    : console.log ( "" )
+         웹브라우저의 경고창 방법           : alert ( "" )
+         웹브라우저의 body 태그에 적는방법  : document.write( "" )
+         웹브라우저의 요소에 적는 방법      : innerHTML ( "" )
+                                             시작태그와 종료태그사이에 출력문을 적는 것
+        
+         적용방식 2가지 
+         내부 : <script type="text/javascript"> >> 과거 : <script>와 동일 : 웹표준
+                <script type="text/javascript"> // 좋은 코딩에서는 꼭 사용해야 함
+
+         외부 : <script src = "js파일경로"></script>
+         외부 : <link rel="style sheet" href= "css파일경로">
+
+         연산자 > + - * / % , ++ -- , += -= *= /= ... == !=
+
+         추가 된 사항 
+         == : 동등연산자 , equal 동일 , 값이 서로 같은지 비교
+              두 값을 비교할 때 javascript 에서 강제로 형변환을 해줍니다.
+         === : 일치연산자 , strict equal : 값도 같고 "타입"도 같은지 비교
+
+         *!= : 값이 같지 않다 ,  !== : 값도 다르고 타입도 다르다
+        
+         + : 덧셈역할 , 문자열결합 역할 
+            1 . 둘다 숫자면 덧셈
+            2 . 하나라도 문자열이면 무조건 문자열 결합
+
+            1 + "월" >> 문자열결합 진행 >> 1을 문자열로 변경 + "월"과 결합
+
+        제어문(조건문) : if  / else if / else / switch case
+        제어문(반복문) : for / while / do ~ while * for in / for of (나중에 설명)  
+        
+    -->
+
+    <button onclick="printDay()">날짜출력버튼</button>
+    <p id = "day"></p>
+
+</body>
+<script type="text/javascript">
+    
+    var x = 3 , y = '3' , z = 3;
+
+    document.write( (x==y)+"<br>")  // true
+    document.write( (x===y)+"<br>") // false
+    document.write( (x===z)+"<br>") // true 
+</script>
+
+
+<!-- 내부 -->
+<!-- <script type="text/javascript">
+    function printDay(){
+        document.getElementById("day").innerHTML=Date();
+    }
+</script> -->
+
+<!-- 외부 -->
+<script src="./0104_01_test.js"></script>
+
+</html>

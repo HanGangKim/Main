@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style type="text/css">
+
+/* 
+태그 내의 스타일 변경 ( 크기 ,색상 , 폰트 , 테두리 등등...)
+
+태그 -> * 박스형태
+
+마진 , 테두리 , 패딩 , 내용
+
+마진 : 테두리 외부와 다른 요소까지의 공간
+테두리 : 내용과 패딩을 감싼 공간
+패딩 : 내용과 테두리 사이에 있는 공간
+내용 : 실질적인 공간
+
+웹브라우저가 전체공간 ( 모니터에 따라서 달라집니다. body 태그 )
+공간을 부여 : top right botton left 순으로 데이터가 입력
+              12시부터 시계방향 
+
+요소를 입력하려고 할때 *개별로 적용하고 싶으면 하나씩 선택하여 입력 or 0px도 방법
+4개를 입력할 때 : top right bottom left 
+3개를 입력할 때 : top (right , left) bottom
+2개를 입력할 때 : (top , bottom) (right , left)
+1개를 입력할 때 : (top , right , bottom , left)
+
+태그 쓸줄 알고 박스형태인 것 아니까 배치 >>
+
+display : 화면상에 보이는 것을 관리하는 속성
+          태그(요소) : 인라인 -> 내용에 따라 크기가 결정 , 요소가 들어갈 수 있는 공간에 배치  
+                       블 록  -> 크기를 정의 , 너비는 화면 끝
+
+          블록태그 : 한 화면의 너비(기본값 , auto , 크기조절필수) , 새로운 라인에서 생성 
+          인라인태그 : 내용에 따른 너비 , 현재 라인에 생성( * 들어갈 공간이 적으면 다음 줄)
+          
+          * 인라인블록 : 크기조절 가능(블록특성) 현재 라인에 생성 (*인라인 특성)
+
+          * display : none -> 레이아웃 제거 , 보이는 것도 제거
+          * visbility : hidden -> 레이아웃 존재 , 보이는 것만 숨기기
+
+position : 화면상에 위치하는 곳을 관리하는 속성
+    - static : 기본값 , 기본 흐름대로 요소들을 배치  
+                *display 속성에 맞춰서 (1)상단부터 하단 / (2)좌측부터 우측
+
+    - relative : 원래 static 위치 기준으로 해당요소의 변경된 위치로 배치
+                 top right bottom left 속성 : 속성기준으로 공간(크기)만큼 이동해라
+                 top : 30px > 상단기준으로 30px만큼 이동해라
+                 right : 50px > 우측기준으로 50px만큼 이동해라
+                 
+    - fixed : 뷰포트(사용자한테 보여지는 화면)를 기준으로 위치로 배치   
+            * z - index : 요소들간의 겹쳐져서 쌓여있을때 순서를 설정하는 속성
+                          숫자가 클수록 화면 앞쪽 위치 출력           
+                          숫자가 작을수록 화면 뒤쪽으로 위치
+    - absolute : 자산의 상위태그(부모)를 기준으로 위치를 배치
+                 부모가 없을때는 body 태그가 기준 , 있으면 부모태그 기준 
+               
+*relative , fixed , absolutr : 상대적 위치를 정하는 속성
+relative : static 요소를 상대적으로
+fixed : 화면(뷰포트)를 상대적을 배치
+absoulte : 부모태그를 상대적으로 배치 
+
+float : 뜨다 , 공중에뜬다 : 이 속성을 가진 태그는 공중에 떠 있다.
+        기본르음(static)에서 빠져나온다
+        left > 왼쪽에 떠있는 블록태그를 만든다
+        right > 오른쪽에 떠 있는 블록태그를 만든다
+
+        이 이후에 작성되는 태그 >
+
+정렬 : margin : auto 가운데 정렬 * margin 정렬 , 너비 (width 속성) 필수
+       float : 좌우정렬
+       position : 좌우정렬(고정)
+
+*/
+
+/* .left{
+    float: left;
+}   
+
+.right{
+    float: right;
+}   
+
+.clear{
+    clear: both;
+} */
+
+
+.main{
+    border: 10px solid yellowgreen;
+    
+   
+}
+
+.float{
+        border: 10px solid yellowgreen;
+        width: 100px;
+        padding: 20px;
+        text-align: center;
+        float: left;
+       
+    }
+
+</style>
+
+</head>
+<body>
+    <!-- <div>
+        기본 div 입니다. 상태를 확인해주세요.
+    </div>
+
+    <div class="left">
+       (left) float div 입니다. 상태를 확인해주세요.
+    </div>
+
+    <div class="right">
+       (right) float div 입니다. 상태를 확인해주세요.
+    </div>
+
+    <div class="clear">
+        기본 div 입니다. 상태를 확인해주세요.
+    </div> -->
+
+
+    <div class="main">
+
+        <div class="float">div</div>
+
+        기본 div 입니다. 상태를 확인해주세요.(left) float div 입니다. 상태를 확인해주세요.
+        (right) float div 입니다. 상태를 확인해주세요.기본 div 입니다. 상태를 확인해주세요.
+        기본 div 입니다. 상태를 확인해주세요.(left) float div 입니다. 상태를 확인해주세요.
+        (right) float div 입니다. 상태를 확인해주세요.기본 div 입니다. 상태를 확인해주세요.
+        기본 div 입니다. 상태를 확인해주세요.(left) float div 입니다. 상태를 확인해주세요.
+        (right) float div 입니다. 상태를 확인해주세요.기본 div 입니다. 상태를 확인해주세요.
+        기본 div 입니다. 상태를 확인해주세요.(left) float div 입니다. 상태를 확인해주세요.
+        (right) float div 입니다. 상태를 확인해주세요.기본 div 입니다. 상태를 확인해주세요.
+        기본 div 입니다. 상태를 확인해주세요.(left) float div 입니다. 상태를 확인해주세요.
+        (right) float div 입니다. 상태를 확인해주세요.기본 div 입니다. 상태를 확인해주세요.
+        기본 div 입니다. 상태를 확인해주세요.(left) float div 입니다. 상태를 확인해주세요.
+        (right) float div 입니다. 상태를 확인해주세요.기본 div 입니다. 상태를 확인해주세요.
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<script>
+
+/*
+    location : 현재 페이지의 주소를 가져오거나 , 새로운 문서를 불러올때 사용
+*/
+
+    document.write("현재주소는" + location.href+ "입니다.");
+
+/*
+    history : 브라우저의 사용했던 내역( 히스토리 )를 저장
+*/
+
+var obj;
+    function openWin(){
+      
+        obj = window.open("0107_03_BrowserObject2.html", "_self" , "width=400px , height=300px");
+    }
+    
+    function closeWin(){
+        obj.close();
+    }
+
+    function backWin(){
+        // 이전페이지 가기
+        window.history.back();
+
+        // 이전페이지 많이가기 (음수에따라 뒤로가기)
+        // window.history.go(-1);
+
+        // 다음페이지 가기
+        // window.history.forward();
+    }
+
+    /* 
+    screen 객체 , navigator 객체 ( 직접 찾아볼것)
+    */
+
+/* 대화상자 : 화면에 출력하는것보다 우선적으로 표현
+  alert() : 경고창 , 사용자에게 메시지를 보여주고 , 확인을 기다리는 창
+           * 대화상자의 확인을 눌러야지만 다음 작업이 진행
+
+  prompt() : 메세지를 보여주고 , 사용자가 입력한 "문자열"을 반환한다. * 반환 : return 있다 > 변수저장 
+  confirm() :  메소드를 보여주고 , 확인 or 취소를 기다리는 창 > 불리언을 반환 
+*/
+
+var b = confirm("안녕"); // YES or No
+alert(b); // 경고창을 통해 확인 
+
+</script>
+
+<body>
+    
+    <h1>새 창 열기</h1>
+    <button onclick="openWin()">새창열기</button>
+    <button onclick="closeWin()">새창닫기</button>
+    <button onclick="backWin()">이전페이지</button>
+
+</body>

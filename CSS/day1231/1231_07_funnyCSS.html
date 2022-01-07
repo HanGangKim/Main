@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown_div{
+            display: none;
+            position: absolute;
+            background-color: gray;
+            width: 160px;
+            padding: 8px;
+        }
+
+        .dropdown:hover .dropdown_div{
+            text-align: center;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 드롭다운 효과 : 마우스가 올라왔을때 요소가 아래로 나오는 효과  -->
+
+    <h1> 드롭다운 </h1> 
+
+    <div class="dropdown">
+        <span>마우스 올려보세요</span> 
+        <div class="dropdown_div">
+            <p> 짜란 ! </p>
+        </div>
+    </div>
+    
+</body>
+</html>

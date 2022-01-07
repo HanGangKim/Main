@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            동위 선택자 : 형제 태그(요소) , 같은 부모 태그(요소)를 가지고 있는 태그(요소) , sibling(형제)
+                          * 기준 태그(요소)보다 항상 뒤에 존재하는 태그(요소)
+
+            일반 동위 선택자 : 해당 기준 태그(요소) 동위 태그(요소)를 찾는 선택자 , ~ 으로 구분(물결 모양으로 구분)
+
+            인접 동위 선택자 : 기준 태그(요소)와 "바로 뒤에" 동위 태그(요소)를 찾는 선택자
+
+        */
+        
+        div {
+            border: 2px solid darksalmon;
+        }
+
+        div ~ p {
+            /* div 태그(기준)와 같은 부모를 가진 형제 태그 
+               div 태그(기준)보다 "뒤"에 존재하는 요소
+               
+               호칭 : 기준태그 ~ 형제태그
+            */
+            background-color: khaki;
+        }
+
+        div + p {
+            text-decoration: underline;
+            font-style: italic;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>동위 선택자</h1>
+    <p>이 p0태그는 div보다 앞에 있어서 동위 선택자 아닙니다.</p>
+    <p>이 p0태그는 div보다 앞에 있어서 동위 선택자 아닙니다.</p>
+
+    <div>
+        <p>이 p1태그는 div보다 앞에 있어서 동위 선택자 아닙니다.</p>
+    <div>
+        <p>이 p2태그는 div의 child 입니다.</p>
+    </div>
+        <p>이 p3태그는 div태그의 바로 뒤에 sibling 입니다.</p>   <!-- (바로 뒤)인접 동위 선택자 -->
+        <p>이 p4태그는 div태그 sibling 입니다.</p>  <!-- 동위 선택자 -->
+    </div>
+        <p>이 p5태그는 body태그의 바로 뒤에 나오는 sibling 입니다.</p>   <!-- (바로 뒤)인접 동위 선택자 -->
+        <p>이 p6태그는 body태그의 sibling 입니다.</p>  <!-- 동위 선택자 -->
+</body>
+
+</html>

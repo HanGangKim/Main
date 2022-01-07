@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="btn" value="이벤트버튼" onclick="func(value)">
+
+    <br><br>
+
+    첫번째 숫자 : <input type="text" id="input1" size="20"><br>
+    두번째 숫자 : <input type="text" id="input2" size="20"><br>
+    <br>
+
+    <input type="button" name="btn" value="덧셈" onclick="func(value)">
+    <input type="button" name="btn" value="뺄셈" onclick="func(value)">
+    <input type="button" name="btn" value="곱셈" onclick="func(value)">
+    <input type="button" name="btn" value="나눗셈" onclick="func(value)">
+ 
+    <br><br>
+
+    result: <input type="text" id="result" readonly> <br>
+    answer: <input type="text" id="answer">
+    <input type="button" name="btn" value="정답체크" onclick="none()">
+
+</body>
+<script type="text/javascript">
+
+    function func(value){
+    var f = Number(document.getElementById("input1").value); 
+    var s = Number(document.getElementById("input2").value);
+
+    var sum= 0;
+
+    switch(value){
+    case "덧셈":
+    sum = f + s; 
+    document.getElementById("result").value = sum;
+    break;
+
+    case "뺄셈":
+    sum = f - s; 
+    document.getElementById("result").value = sum;
+    break;
+
+    case "곱셈":
+    sum = f * s; 
+    document.getElementById("result").value = sum;
+    break;
+
+    case "나눗셈":
+    sum = f / s; 
+    document.getElementById("result").value = sum;
+    break;
+    
+    }
+    
+    }
+
+
+    // 기존방법 , 각각을 다 메소드로 나눔
+    // function add2(){
+    // // alert("확인")
+    // // 숫자가 아닐경우 NaN이라는 메시지로 변경 
+    // var f = Number(document.getElementById("input1").value); 
+    // var s = Number(document.getElementById("input2").value);
+
+    // function add3(){
+    // // alert("확인")
+    // // 숫자가 아닐경우 NaN이라는 메시지로 변경 
+    // var f = Number(document.getElementById("input1").value); 
+    // var s = Number(document.getElementById("input2").value);
+
+    // var sum = f * s; 
+    // document.getElementById("result").value = sum;
+    // }
+
+    // function add4(){
+    // // alert("확인")
+    // // 숫자가 아닐경우 NaN이라는 메시지로 변경 
+    // var f = Number(document.getElementById("input1").value); 
+    // var s = Number(document.getElementById("input2").value);
+    // var sum = f / s; 
+    // document.getElementById("result").value = sum;
+    // }
+   
+  
+    
+
+   
+
+
+
+</script>
+
+</html>

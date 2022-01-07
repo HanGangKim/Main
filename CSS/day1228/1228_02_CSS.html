@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        CSS : HTML요소(:태그) 사용자들에게 어떻게 보이게 할 것이냐를 정의하는 언어
+
+        웹페이지의 스타일과 내용적인 부분을 분리하기 위한 스타일 시트 
+
+        HTML에서 세부적으로 스타일을 적용시킬때는 각각 따로 지정을 해주어야했던 단점
+
+        W3C 만든 > CSS : 내용적인 부분을 제외하고 스타일을 담당하기 위한 언어
+
+        Cascading Style Sheets : CSS
+
+        장점 : 내용과 별도로 스타일 관리 
+               전체적용 , 개별적용 가능
+               별도의 파일로 관리하기 때문에 다른 페이지에 일괄적용이 가능 
+
+
+        문법 : <head> 태그 내에서 <style> 태그로 선언  
+                <style>적용시킬 스타일에 대한 정의</style>
+                
+                선택자1 { 속성명: 속성값 ; 속성명 속성값;.... } 
+                선택자2 { 속성명: 속성값 ; 속성명 속성값;.... } 
+
+        선택자란 : HTML요소(태그) 선택자 / 선택자를 사용하면 HTML의 모든 태그를 정의 가능
+                    id ( 선택자 # ) , 하나의 대상에게만 적용 
+                    class 선택자 ( . ) , 하나의 그룹에게만 적용      
+                    group 선택자 ( * , ) - 추후 다시 설명 , 위에 작성된 선택자들을 묶는 선택자
+                     * : 전체를 뜻합니다.
+
+        스타일 적용방법
+        1. 인라인 스타일
+            - 태그안에 Style = " " : 해당 요소에만 적용하는 스타일을 작성할때 사용
+            - 한번 설정하면 변경하기가 껄끄럽기 때문에 필요한 경우에만 사용 
+
+        2. 내부 스타일 시트
+            - <head>태그 안에 <style> 태그를 만들어서 사용
+            - 해당 문서에서만 적용 
+
+        3. 외부 스타일 시트
+            - <head> 태그 안에 <link> 태그를 이용해서 외부에 있는 css 파일을 호출하여 사용
+        
+        우선순위 : 인라인 스타일 > 내부 , 외부 스타일 > 웹브라우저가 기본 스타일         
+    -->
+    <div>안녕하세요</div>
+    <div id="point1">안녕하세요</div>
+    <div id="point10">안녕하세요</div>
+    <div id="point100">안녕하세요</div>
+
+    <p>안녕하세요1</p>
+    <p id="point1">안녕하세요1</p>
+    <p id="point10">안녕하세요1</p>
+    <p id="point100">안녕하세요1</p>
+
+    <p>안녕하세요2</p>
+    <p id="point2">안녕하세요2</p>
+    <p id="point20">안녕하세요2</p>
+    <p id="point200">안녕하세요2</p>
+
+    <p>안녕하세요3</p>
+    <p class="point3">안녕하세요3</p>
+    <p class="point3">안녕하세요3</p>
+    <p class="point30">안녕하세요3</p>
+
+    <div id="id1" class="class1">안녕하세요</div>
+</body>
+<!-- 선택자를 통해 일괄적용 -->
+<style type="text/css">
+    /* div {color : red;
+        background-color: seagreen;
+    } 
+
+    p {color : snow;
+        background-color: black;
+    } 
+    
+    #point1 {
+        font-size: 20px;
+    }
+
+    #point10{
+        font-size: 24px;
+    }
+    
+    #point100{
+        font-size: small;
+    }
+
+    #point2 , #point20 , #point200{
+        font-size: x-large;
+    }
+
+    .point3 {
+        font-size: x-small;
+    } */
+
+    /* css 주석 / 프로그램마다 주석이 다름 */
+
+   /* 동일한 선택자일 경우 하단에 적힌 값으로 적용 */
+    div{ color: gray; } 
+    div{ color: red; }
+
+    /* 요소 선택자와 id 선택자일 경우 : id 선택자의 값으로 적용 */
+    /* #id1 { color: green; } 
+    #id1 { color: blue; }  */
+
+    /* 요소선택자와 class 선택자일 경우 : class 선택자의 값으로 적용 */
+    .class1 { color: yellow; }
+
+     /* id 선택자랑 class 선택자일 경우 : id 선택자의 값으로 적용 */
+     #id1 { color: blue; }
+</style>
+
+</html>

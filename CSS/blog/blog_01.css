@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    width: 1920px;
+    height: 1080px;
+    border-style: solid;
+
+}
+
+header{
+    margin-left: 50px;
+}
+
+.topRight{
+    color: blue;
+    border-style: solid;
+    width: 500px;
+    height: 100px;
+    display: inline-block;
+  
+}
+
+.topLeft{
+    color: blue;
+    border-style: solid;
+    width: 500px;
+    height: 100px;
+    display: inline-block;
+  
+}
+
+.topLeft+h1{
+ width: 800px;
+ height: 100px;
+ border-style: solid;
+ text-align: center;
+ display: inline-block; 
+}
+
+
+.nav{
+    color: blue;
+    border-style: solid;
+    width: 1920px;
+    height: 200px;
+   margin-top: 105px;
+}

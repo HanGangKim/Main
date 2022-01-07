@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+    // 1. 사용자 숫자 선택 6개 >> 배열 입력
+    // var usrLotto = [];
+    // for (var i = 0; i < 6; i++) {
+    //     var rd = prompt((i+1) +" 번째 숫자를 입력해주세요");
+    //     usrLotto.push(rd);
+
+    //     for (var j = 0; j < i; j++) {
+    //         if (usrLotto[i] == usrLotto[j]) {
+    //             alert("중복된 숫자입니다.");
+    //             usrLotto.pop();
+    //             i--;
+    //         }
+    //     }
+
+    // }
+
+    // var answer = prompt("로또번호를 입력해주세요. '/' 기준으로 다음 숫자 입력 \n"+
+    //                     "입력예시>1/2/3/4/5/6");
+    // var usrLotto = answer.split("/" , 6);
+
+
+    var usrLotto = [];
+    for (var k = 0; k < 6; k++) {
+        var userNum = prompt((k + 1) + "번째 숫자를 입력해주세요");
+        usrLotto[k] = userNum;
+        for (var j = 0; j < k; j++) {
+            while (usrLotto[k] == usrLotto[j]) {
+                userNum = prompt(userNum+"은 이미 입력되었습니다. 다른 숫자를 입력해주세요");
+                usrLotto[k] = userNum;
+                j = 0;
+            }
+        }
+
+
+    }
+
+
+    // 2. 컴퓨터 숫자선택 6개 랜덤 Math.random() >> 배열 입력
+    var comLotto = [];
+
+    for (var i = 0; i < 6; i++) {
+        var rd = Math.floor((Math.random() * 6) + 1);
+        comLotto.push(rd);
+
+        for (var j = 0; j < i; j++) {
+            if (comLotto[i] == comLotto[j]) {
+                comLotto.pop();
+                i--;
+            }
+        }
+
+    }
+
+
+    // var arr1 = new Array(6);
+
+    // for (var i = 0; i < 6; i++) {
+    //     arr1[i] = Math.floor(Math.random() * 45 + 1);
+    //     for (var j = 0; j < i; j++) {
+    //         while (arr1[i] == arr1[j]) {
+    //             arr1[i] = Math.floor(Math.random() * 45 + 1);
+    //             j = 0;
+    //         }
+    //     }
+    // }
+
+    // var ranarr = [];
+
+    // // 중복제거
+    // for (var i = 0; i < 6; i++) {
+    //     var ran = Number(Math.floor((Math.random() * 6) + 1));
+    //     if (ranarr.indexOf(ran) == -1) {
+    //         // indexOf == -1 : 일치하는 값이 없으면 -1 반환
+    //         // indexOf의 값이 -1 이라는 것은 일치하는 값이 없다는 뜻
+    //         ranarr.push(ran) // 일치하는 값이 없다면 push(ran)
+
+    //     } else {
+    //         // 값이 일치한다면 따로 push 하지 않고 횟수차감
+    //         i--; // 반복횟수를 줄여줌
+    //     }
+    // }
+
+
+    
+    // 3. 정렬    
+    document.write(usrLotto+"<br>"); 
+    document.write(comLotto+"<br>");
+    
+    document.write("정렬 후 <br>");
+    // 문자열을 기준으로 비교 >> 1 < 5 / 11 < 5 
+    usrLotto.sort(
+        function ( a, b){
+            // 원래같으면 문자열비교에 대한 결과이지만,
+            // - 라는 사칙연산 사용을 하므로 자동으로 비교할값을 숫자형으로 변경
+            // a-b : 양수 (앞뒤숫자를 변경)
+            //        0 (같다)
+            //        음수 (변경하지않습니다.)
+            return a-b;
+        }
+    );
+    
+    comLotto.sort(function(a,b){return a-b;});
+    document.write(usrLotto+"<br>"); 
+    document.write(comLotto+"<br>");
+    
+    // 4. 비교
+    var cnt = 0;
+    for(var i=0; i<usrLotto.length;i++){
+        for(var j=0; j<comLotto.length;j++){
+            if(usrLotto[i] == comLotto[j]){
+                cnt++;
+            }
+        }
+    }
+
+    // 5. 결과 출력
+    document.write(cnt + " 개 맞았습니다.")
+
+
+    //* 정렬 ( 배열변수명.sort() ), 중복제거
+
+
+</script>
+
+</html>

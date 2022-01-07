@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>appendChild</h1>
+
+    <p id="item">자바스크립트</p>
+
+    <div id="list">
+        <p>자바</p>
+        <p id="html">HTML</p> 
+        <p>CSS</p>
+    </div>
+
+<input type="button" value="append추가" onclick="append()">
+<input type="button" value="insert추가" onclick="insert()">
+
+</body>
+
+<script type="text/javascript">
+
+    // appendChild : 노드를 해당 노드의 자식의 맨 마지막으로 추가
+    function append(){
+        // alert("함수등록완료"); // alert을 항상 먼저 작성해서 제대로 연결이 되었는지 확인할 것
+        
+      var parent= document.getElementById("list"); 
+    // 새로만든 노드 :
+    // var p = document.createElement("p");
+    // var ptext = document.createTextNode("추가된 p");
+    // p.appendChild(ptext);
+    // parent.appendChild(p);
+
+    // 기존에 있는 노드 : 현재 위치에 있던 노드는 제거 , 새로 추가될 위치에 노드가 생성
+    //                    * 한 문서상에는 동일노드가 있을 수 없다
+    var append = document.getElementById("item");
+    parent.appendChild(append);
+
+    }
+
+    function insert(){
+        var parent= document.getElementById("list"); 
+        // 새로 만든 노드 :
+        // var p = document.createElement("p");
+        // var ptext = document.createTextNode("추가된 p");
+        // p.appendChild(ptext);
+
+    // 기존에 있는 노드
+    var append = document.getElementById("item");
+    parent.appendChild(append);
+   
+    // 자식중에 기준이 될 태그
+    var select = document.getElementById("html");
+
+    // parent.insertBefore(p,select);
+    // 자식을 추가할 부모.insertBefore(기준 앞에 들어갈 태그 , 자식중에 기준태그); 
+    // if가 html인 요소 앞에 새로만든 p태그를 삽입
+        
+     parent.insertBefore(append,select);
+    }
+</script>
+
+</html>

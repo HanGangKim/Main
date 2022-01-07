@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>node 연습</h1>
+    <button onclick="nodeTest()">연습결과</button>
+    <p id="nodeTest"> </p>
+</body>
+
+<script>
+    // 노드 사용처 : 사용자가 웹사이트를 입력하면 다른 곳으로 던져주는 역할
+
+    function nodeTest(){
+
+        document.getElementById("nodeTest").innerHTML
+                //    = document.childNodes[1].childNodes[0].nodeName; // HEAD 태그 찾는법
+                //    = document.firstChild.nodeName; //  HTML 태그는 가장 첫번째 
+                //    = document.childNodes[1].childNodes[2].nodeName; // BODY 태그 찾는법
+                //    = document.childNodes[1].childNodes[1].nodeName; // #text
+                      = document.childNodes[1].firstChild.nodeName; // HEAD 태그 찾는법
+
+                      // html > HEAD 첫째 : 요소노드
+                      //      > HEAD / HEAD 사이에 있는 텍스트가 둘째 : 텍스트 노드
+                      //      > BODY 셋째 : 요소노드
+                      //      > BODY / BODY 사이에 있는 텍스트가 넷째 : 텍스트 노드
+
+                     
+
+                      // 노드는 성격을 나타냄
+        
+    }
+
+
+    // 웹페이지의 기능을 입히기 위한 이론
+
+    // 노드 : 계층구조에 들어있는 정보 , 태그(요소) , 속성 , 텍스트 등등 
+    // 태그 = 요소 , 속성 = 속성값 , 시작태그와 종료태그 = 텍스트
+    // 노드간의 연결선을 만들어주면 노드 트리 
+
+    // 최상단 >> 최하단 노드트리를 이용하여 모든 데이터가 연결이 되어있습니다.
+    // DOM : document 안에 담겨져 있는 노드를 관리하는 것이 목적 
+
+    // 노드 관계 : 
+    // 루트 노드 : 최상단 노드 , 유일하게 부모가 없습니다 ( 모든 노드의 부모 )
+    // 일반 노드 : 단 하나의 부모 노트 존재 , 자식은 자유롭게 
+
+    // 형제 노드 : 같은 부모의 노드
+    // 조상 노드 : 현재 노드 기준 , 상위로 존재하는 모든 노드
+    // 자손 노드 : 현재 노드 기준 , 하위로 존재하는 모든 노드
+
+     // dom을 이용해서 찾아오는 노드의 종류 5가지
+    // 1. 문서노드 : HTML 전체를 나태내는 노드 : document : 유일한 존재
+    // 2. 요소노드 : HTML 태그를 요소노드 , 속성 노드를 가지는 노드
+    // 3. 속성노드 : HTML 태그안에 있는 속성들은 속성노드로 구분 , 요소노드의 정보포함 , 자식관계 아님
+    // 4. 텍스트 노드 : 모든 텍스트를 나타내는 노드 
+    // 5. 주석노드 : 주석을 나타내는 노드
+    
+    // 1. getElementsByTagName() 메소드를 이용하여 접근하는 방법 : id와 class 배정 (요소노드대상)
+    // 2. 노드간의 관계를 활용하는 방법 (요소노드포함대상)
+    // 관계에 따른 접근방법
+    //      parentNode : 부모 노드
+    //      childNodes : 자식 노드 리스트
+    //      firstChild : 첫 번째 자식 노드
+    //      lastChild : 마지막 자식 노드
+    //      nextSibling : 다음 형제 노드
+    //      previousSibling : 이전 형제 노드
+    
+    // 접근 접근한 노드의 정보를 보는 방법 3가지
+    // nodeName : 노드에 담긴 태그이름 , 속성이름 , #text(텍스트노드) , #document(문서노드) : 무조건 대문자
+    // nodeValue : 노드에 담긴 속성값 , 문자열
+    // nodeType : 노드 종류에 따른 값
+
+
+
+
+    
+
+
+</script>
+</html>

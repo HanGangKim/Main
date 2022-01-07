@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 
+            Float : 요소가 잘 어울리게 만들어주는 기능 , 레이아웃 작성할 때 자주사용 하는 기능
+        
+            overflow : 요소가 밖으로 흘러넘칠때 자동을 요소를 감쌀 수 있도록 도와주는 속성
+        */
+        .left{
+            float: left;
+            width: 200px;
+            height: 50px;
+            background-color: tomato;
+        }
+
+        .right{
+            float: right;
+            width: 200px;
+            height: 50px;
+            background-color: goldenrod;
+        }
+
+        h2{
+            clear: both;
+        }
+
+        div{
+            border:2px solid springgreen;
+            padding : 5px;
+        }
+
+        img{
+            float: left;
+        }
+
+        p{
+            clear: left;
+        }
+
+        .overflow{
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>float 연습중입니다.</h2>
+
+    <div>
+        <div class="left">왼쪽끝요소</div>
+        <div class="right">오른쪽끝요소</div>
+    </div>
+    <h2>float 연습이 끝났습니다.</h2>
+   
+
+    <h1>overflow</h1>
+    <div>이미지와 이미지 설명 텍스트
+        <img src="img/11st.png" width="250px" height="150px">
+    </div>
+
+    <p></p>
+
+    <div class="overflow">이미지와 이미지 설명 텍스트
+        <img src="img/11st.png" width="250px" height="150px">
+    </div>
+</body>
+</html>

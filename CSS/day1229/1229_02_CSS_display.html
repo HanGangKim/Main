@@ -1,0 +1,95 @@
+    z<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+
+        /* 
+            블록 : 언제나 새로운 라인에서 시작 , 너비(가로) 모든 라인을 차지
+        
+            인라인 : 현재 라인에서 시작 , 너비(가로) 내용만큼 차지
+
+            모든 태그에는 display 옵션의 속성이 정해져있습니다, > 속    성값이 있다.
+
+            display 속성값을 바꾼다면 블록 > 인라인 / 인라인 > 블록
+s
+            * 원래 인라인 태그 > 블록 변경하더라도 블록태그처럼 다른 요소를 포함할 순 없습니다.
+
+            너비와 높이 : 블록태그 설정 / 인라인 태그 설정 불안  
+            너비 차지 : 블록태그 전체 / 인라인 태그내용만큼
+
+            inline-block : 라인을 차지하는 행동은 inline처럼 행동
+                           크기와 너비 , 마진등은 블록요소처럼 사용 가능 
+        */
+
+        /* 태그 요소일 경우 점이 없음 */
+        div{
+            width: 100px;
+            height: 50px;
+        }
+
+    /* 클래스 요소일 경우 점이 있음 / 같은 단어가 포함된 클래스는 모두 적용(띄어쓰기 필요) */        
+   .first{
+    background-color: cadetblue;
+   }
+
+   .second {
+    background-color: chartreuse;
+   }
+
+   .third{
+       background-color: crimson;
+   }
+
+   .inline {
+       /* 인라인의 너비와 높이는 내용에 맞춰서 설정되기 때문에 크기가 설정이 안됨 */
+       display: inline;
+   }
+
+   .inline-block{
+       /* 블록의 형태처럼 너비와 높이를 설정 , inline 태그처럼 가로정렬이 가능하다 */
+       display: inline-block;
+   }
+
+   
+   .display{ /* 요소태그를 숨기는 속성 , 눈에도 안보이고 레이아웃 상에도 안보임 */
+    display: none; 
+
+   }
+
+   .visibility{
+    visibility : hidden;  /*요소(태그)를 숨기는 속성, 눈에는 안보이지만 레이아웃 상에는 존재  */
+   }
+
+    </style>
+</head>
+<body>
+   <h1>display 속성 테스트</h1>
+
+   <h3>display : block일때 / 블록일때</h3>
+    <div class="first">블록</div>
+    <div class="second">블록</div>
+    <div class="third">블록</div>
+    <br><br>
+
+    <h3>display : inline일때 / 인라인 일때</h3>
+    <div class="first inline" >블록</div>
+    <div class="second inline">블록</div>
+    <div class="third inline">블록</div>
+    <br><br>
+
+    <h3>display : inline-block일때 / 인라인 블록일때</h3>
+    <div class="first inline-block">블록</div>
+    <div class="second inline-block">블록</div>
+    <div class="third inline-block">블록</div>
+
+    <div class="none">123123</div>
+    <div class="visibility">123123</div>
+    
+    <div>123</div>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        /* 색상 이름은 140개 정의 됨 */
+
+        /* 적용 제일 느림 */
+        div{color: red;}
+
+        /* 적용 1번 */
+        .color1{
+            color: rgb(0, 0, 255);
+        }
+
+          /* 적용 2번 */
+        .color2{
+            /* R , G , B : 255 255 255 
+               255 : 16진수로 표현하면 2자리 표현이 됩니다.
+            */
+            color: #00FF00;
+        }
+        
+         
+         .color3{
+           
+          background-color: lightblue;
+        }
+
+        
+         .color4{
+           background-image: url("CSS.png") ;  /* 배경 이미지  */
+           /* background-repeat: repeat x ;   가로 
+           background-repeat: repeat y ;   세로 
+           background-repeat: no-repeat  ; */
+           height: 100px;
+            
+        }
+
+        .color5{
+            /* ltr : 왼쪽에서 오른쪽 정렬
+               rtl : 오른쪽에서 왼쪽 정렬 */
+           direction: rtl;
+
+           /* 글자 사이의 간격 */
+           letter-spacing: 10px;
+
+           /* 단어 사이의 간격 */
+           word-spacing: 10px;
+         }
+
+         .color6{
+           /* 문자 들여쓰기 */
+            text-indent: 30px;
+
+            /* 문자 정렬 (center : 가운데 / left 왼쪽 / right 오른쪽) */
+            /* 위에서 다룬 direction보다 우선적용 */
+            text-align: center;
+
+            /* 글자 뒤에 그림자 , px는 그림자의 위치 */
+            text-shadow: 3px 2px lightcoral;
+         }
+
+         .color7{
+             /* 문자 위에 선을 그음 */
+             text-decoration: overline;
+              /* 문자 중간에 선을 그음(취소문구처럼) */
+             text-decoration: line-through;
+         }
+
+         a{
+            text-decoration: none;
+            color: black;
+         }
+
+         p{
+             font-family: 'Times New Roman', Times, serif;
+         }
+
+         #font1{
+             /* 궁서체 , 한글폰트도 적용가능 */
+             font-family: Gungsuh;
+
+             /* 글씨 모양 설정 : 이텔릭(눕는글씨) , 볼드(굵은글씨) 등등 */
+             font-style: italic;
+
+             /* 글씨를 조금 작게 만듬 (한글은 적용 x , 영어만 적용가능) */
+             font-variant: small-caps ;
+         }
+
+         #font2{
+             /* 글씨의 두께감을 지정 / 볼드체 , 라이트체 등등  */
+             font-weight: bolder;
+
+            /* 
+                px : 스크린의 픽셀단위 , 절대적 크기( oo 칸의 픽셀크기로 만들어라 )
+
+                * 기본크기는 1em = 16px
+                em : 글꼴의 기본크기를 1em 놓고 상대적으로 크기 조정 (기본크기를 기준으로 잡고 크거나 작아짐)
+                (em을 중점으로 사용)
+                
+                % : 기본크기를 100% 놓고 상대적으로 크기 설정 
+            */
+
+             /* ***글씨의 크기조정*** */
+                
+         }
+
+         font3{
+            font-size: 32px;            
+         }
+
+         font4{
+             font-size: 2em;
+         }
+    </style>
+</head>
+
+<body>
+    <div class = "color1">색상테스트</div>
+    <div class = "color2">색상테스트</div>
+    <div class = "color3">색상테스트</div>
+    <div class = "color4">색상테스트</div>
+    <div class = "color5">색상테스트</div>
+    <div class = "color6">색상테스트</div>
+    <div class = "color7">색상테스트</div>
+
+    <a href="#">이곳은 링크를 위한 태그입니다.</a> 
+    <div>Font testing 폰트테스트</div>
+    <p id="font1">Font testing 폰트테스트</p>
+    <p id="font2">Font testing 폰트테스트</p>
+    <p id="font3">Font testing 폰트테스트</p>
+    <p id="font4">Font testing 폰트테스트</p>
+    <p id="font5">Font testing 폰트테스트</p>
+
+</body>
+
+</html>
